@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no">
+  <title>NG - Brand</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/brand.css">
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+        //모바일 메뉴
+        $(".ham_menu").click(function(){
+          $(".mobile_menu").stop().slideToggle();
+        });
+        $(".mobile_menu .gnb_m > li").click(function(){
+          $(this).children(".sub_m").slideToggle();
+        });
+        
+
+    });
+  </script>
+</head>
+<body>
+  <!-- 헤더 영역 -->
+  <div id="header">
+    <div class="h_center clear">
+      <h1 class="h_logo"><a href="index.html"><img src="images/toplogo-min.png" alt=""></a></h1>
+      <div class="gnb_wrap">
+        <ul class="gnb">
+          <li><a href="./ngBrand.html">BRAND</a></li>
+          <li><a href="#">NEWS</a></li>
+          <li><a href="./ngChannel.html">CHANNEL</a></li>
+          <li>
+            <a href="#">MAGAZINES</a>
+            <ul class="sub">
+              <li><a href="#">내셔널지오그래픽 매거진</a></li>
+              <li><a href="#">내셔널지오그래픽 트래블러 매거진</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">STORE</a>
+            <ul class="sub">
+              <li><a href="#">내셔널지오그래픽 어패럴</a></li>
+              <li><a href="#">모바일 액세서리</a></li>
+            </ul>
+          </li>     
+        </ul>
+        <a class="ham_menu" href="#"><img src="images/ham_menu-min.png" alt=""></a>
+      </div>
+      <div class="sub_bg"></div>
+    </div>
+    <div class="mobile_menu">
+      <ul class="gnb_m">
+        <li><a href="./ngBrand.html">BRAND</a></li>
+        <li><a href="#">NEWS</a></li>
+        <li><a href="./ngChannel.html">CHANNEL</a></li>
+        <li>
+          <a href="#">MAGAZINES</a>
+          <ul class="sub_m">
+            <li><a href="#">내셔널지오그래픽 매거진</a></li>
+            <li><a href="#">내셔널지오그래픽 트래블러 매거진</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">STORE</a>
+          <ul class="sub_m">
+            <li><a href="#">내셔널지오그래픽 어패럴</a></li>
+            <li><a href="#">모바일 액세서리</a></li>
+          </ul>
+        </li>     
+      </ul>
+    </div>
+  </div>
+  <!-- 중단 영역 -->
+  <div id="container_brand">
+    <div class="brand">
+      <div class="brand_top">
+        <h2>BRAND</h2>
+      </div>
+      <div class="brand_bot">
+        <ul class="brand_bot_list">
+          <li>
+            <p>내셔널지오그래픽협회는 탐험과 환경 보호를 통해 지구와 인류에 공헌하고 있는 세계 최대의 비영리 단체입니다. 매년 전세계의 수많은 연구와 환경 보호 프로젝트를 지원하고 있으며, 다방면의 교육 캠페인 등을 통해 미래 세대에개 영감과 비전을 심어주고 있습니다.</p>
+            <h3>HUMAN</h3>
+          </li>
+          <li>
+            <p>내셔널지오그래픽은 지구와 인류 그리고 '우리'를 둘러싼 살아있는 이야기를 전합니다. 내셔널지오그래픽은 TV채널, 잡지 아동 미디어, 여행 및 탐험, 서적, 지도, 소비자 제품, 지역 기반 엔터테인먼트 및 디지털 미디어 등 전 세계의 다양한 플랫폼을 통하여 게계 최고의 과학자, 사진작가, 언론인 및 제작자들의 놀라운 이야기를 전달하며 즐거움을 선사하고 있습니다.</p>
+            <h3>NATURE</h3>
+          </li>
+          <li>
+            <p>내셔널지오그래픽 매거진은 현재 전 세계 28개국 23개 언어로 매월 동시 발행되고 있습니다. 단순한 기록을 넘어 예술적으로도 높게 평가 받는 내셔널지오그래픽의 사진은 전 게셰 사진 작가들의 이상이며 독자들에세는 높은 소장가치로 매거진 그 이상의 의미를 갖게 합니다.</p>
+            <h3>CULTURE</h3>
+          </li>
+          <li>
+            <p>내셔널지오그래픽어패럴은 탐험과 환경 보호를 통해 지구와 인류에 공헌하고 있는 세계 최대의 비영리 단체입니다. 매년 전세계의 수많은 연구와 환경 보호 프로젝트를 지원하고 있으며, 다방면의 교육 캠페인 등을 통해 미래 세대에개 영감과 비전을 심어주고 있습니다.</p>
+            <h3>SCIENCE</h3>
+          </li>
+        </ul>      
+      </div>    
+    </div>
+  </div>
+  <!-- 하단 영역 -->
+  <div id="footer">
+    <div class="f_center">
+      <ul class="f_menu clear">
+        <li><a href="#">BRAND</a></li>
+        <li><a href="#">NEWS</a></li>
+        <li><a href="#">CHANNEL</a></li>
+        <li><a href="#">MAGAZINES</a></li>
+        <li><a href="#">STORE</a></li>
+      </ul>
+      <div class="f_bot clear">
+        <ul class="bot_left clear">
+          <li><a href="#"><img src="images/f_face-min.png" alt=""></a></li>
+          <li><a href="#"><img src="images/f_insta-min.png" alt=""></a></li>
+          <li><a href="#"><img src="images/f_twitter-min.png" alt=""></a></li>
+        </ul>
+        <div class="bot_right">
+          <h3>CONTACT US</h3>
+          <ul class="f_contact clear">
+            <li>Tel : 02-2137-3264</li>
+            <li>Fax : 02-2355-2515</li> 
+            <li>Email : ngkorea@gmail.com</li> 
+          </ul>
+          <p>Copyright © 2018 National Geographic Korea LLC. All rights reserved</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+@charset 'utf-8';
+
+
+/* brand 소개 */
+.brand{ width: 1200px; margin: 0 auto; padding-top: 100px; }
+
+.brand_bot_list li{ padding: 30px; width: 80%; height: 250px;
+                    border: 20px solid #333; margin-bottom:100px;
+                    box-shadow: 10px 10px 0px #fc0; background-color: #fff;}
+.brand_bot_list li p{ float: left; width: 60%; margin-right: 10%; 
+                      font-size: 17px; line-height: 30px;}
+.brand_bot_list li h3{ float: left; width: 30%; font-size: 50px; text-shadow: 5px 5px 1px #ccc;}
+.brand_bot_list li:nth-child(2n){ margin-left: 20%;}
+.brand_bot_list li:nth-child(2n) p{ float: right;margin-right: 0; margin-left: 10%;}
+
+
+
+/* 모바일  1024px이하 */
+@media screen and (max-width:1024px){
+  
+  .brand{ width: 90%;  }
+  .brand_angle .bottom{ width: 60%; }
+
+  .brand_bot_list li{ padding: 20px; 
+                      border: 15px solid #333; margin-bottom:70px;
+                      }
+  .brand_bot_list li p{ width: 60%; margin-right: 10%; 
+                        font-size: 15px; line-height: 25px;}
+  .brand_bot_list li h3{ width: 30%; font-size:30px; }
+  .brand_bot_list li:nth-child(2n){ margin-left: 20%;}
+  .brand_bot_list li:nth-child(2n) p{ float: right;}
+
+}
+
+
+/* 모바일  768px이하 */
+@media screen and (max-width:768px){
+  
+  .brand{ width: 90%;  }
+  .brand_angle .bottom{ width:80%; }
+
+  .brand_bot_list li{ border: 10px solid #333; margin-bottom:50px;
+                      }
+  .brand_bot_list li p{ width: 60%; margin-right: 10%; 
+                        font-size: 14px; line-height: 23px;}
+  .brand_bot_list li h3{ width: 30%; font-size:25px; }
+  .brand_bot_list li:nth-child(2n){ margin-left: 15%;}
+
+}
+

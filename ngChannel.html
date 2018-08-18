@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no">
+  <title>NG - Channel</title>
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/channel.css">
+  
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.mCustomScrollbar.js"></script>
+  <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+      //a태그 고정
+      $("#container_channel a").click(function(event){
+        event.preventDefault();
+      });
+      
+      
+      //모바일 메뉴
+      $(".ham_menu").click(function(){
+        $(".mobile_menu").slideToggle();
+      });
+      $(".mobile_menu .gnb_m >li").click(function(){
+        $(this).children(".sub_m").slideToggle();
+      });
+
+      
+      //channel 페이지 커스텀 스크롤바 플러그인
+      $(".right_list").mCustomScrollbar({
+        axis:"y",
+        theme:"minimal"// horizontal scrollbar
+      });
+      
+      
+      $(".right_list  li").click(function(){
+        var video_list = $(this).attr("data-video");  //값을 가지고 올때
+        var video_title = $(this).attr("data-title");
+        var video_desc = $(this).attr("data-desc");
+        
+        $(".vid").attr("src",video_list);
+        $(".big_title").text(video_title);
+        $(".big_desc").text(video_desc);
+      });
+      
+      
+      
+      //isotope 기본셋팅
+      $(".show_list").isotope({
+        itemSelector: '.all',
+        layoutMode: 'masonry'
+      });
+
+      //버튼 클릭시 정렬기능 실행
+      $(".type_btn li").click(function(){
+
+        //버튼 클래스 활성화 및 클래스 제거
+        var list = $(this).index();
+        $(".type_btn li").removeClass("on");
+        $(".type_btn li").eq(list).addClass("on");
+
+
+        //클릭한 버튼의 속성값 받아오기
+        var value = $(this).attr("data-list");
+        
+        //버튼 클릭시 움직이면서 정렬기능 실행
+        $(".show_list").isotope({
+            filter: value
+        });
+
+      });
+      
+      
+    });
+  </script>
+</head>
+<body>
+  <!-- 헤더 영역 -->
+  <div id="header">
+    <div class="h_center clear">
+      <h1 class="h_logo"><a href="index.html"><img src="images/toplogo-min.png" alt=""></a></h1>
+      <div class="gnb_wrap">
+        <ul class="gnb">
+          <li><a href="./ngBrand.html">BRAND</a></li>
+          <li><a href="#">NEWS</a></li>
+          <li><a href="./ngChannel.html">CHANNEL</a></li>
+          <li>
+            <a href="#">MAGAZINES</a>
+            <ul class="sub">
+              <li><a href="#">내셔널지오그래픽 매거진</a></li>
+              <li><a href="#">내셔널지오그래픽 트래블러 매거진</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">STORE</a>
+            <ul class="sub">
+              <li><a href="#">내셔널지오그래픽 어패럴</a></li>
+              <li><a href="#">모바일 액세서리</a></li>
+            </ul>
+          </li>     
+        </ul>
+        <a class="ham_menu" href="#"><img src="images/ham_menu-min.png" alt=""></a>
+      </div>
+      <div class="sub_bg"></div>
+    </div>
+    <div class="mobile_menu">
+      <ul class="gnb_m">
+        <li><a href="./ngBrand.html">BRAND</a></li>
+        <li><a href="#">NEWS</a></li>
+        <li><a href="./ngChannel.html">CHANNEL</a></li>
+        <li>
+          <a href="#">MAGAZINES</a>
+          <ul class="sub_m">
+            <li><a href="#">내셔널지오그래픽 매거진</a></li>
+            <li><a href="#">내셔널지오그래픽 트래블러 매거진</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">STORE</a>
+          <ul class="sub_m">
+            <li><a href="#">내셔널지오그래픽 어패럴</a></li>
+            <li><a href="#">모바일 액세서리</a></li>
+          </ul>
+        </li>     
+      </ul>
+    </div>
+  </div>
+  <!-- 중단 영역 -->
+  <div id="container_channel">
+    <div class="sub_channel">
+      <div class="channel_top clear">
+        <h2>CHANNEL</h2>
+        <div class="show_big">
+          <iframe class="vid" width="800" height="450" src="https://www.youtube.com/embed/Fr5ktc_cPbA?rel=0&amp;autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <h3 class="big_title">지니어스Ⅱ: 파블로 피카소</h3>
+          <p class="big_desc">천재 화가 피카소의 러브 앤 라이프</p>
+          <a class="more" href="#">더 보기</a>
+        </div>
+        <div class="show_right">
+          <h3>최근 영상</h3>
+          <ul class="right_list">
+            <li data-title="서저리 쉽: 바다 위의 병원선" data-desc="의료 사각지대에 삶과 희망을 전하는 바다 위 종합 병원" data-video="https://www.youtube.com/embed/ZGOT9GfYilM">
+              <a href="#"><img src="images/cha9-min.png" alt="서저리 쉽: 바다 위의 병원선"></a>
+            </li>         
+            <li data-title="이어 밀리언: 인류의 미래" data-desc="새로운 시대, 변화하는 인류" data-video="https://www.youtube.com/embed/I9RJtA72KW0">
+              <a href="#"><img src="images/cha10-min.png" alt="이어 밀리언: 인류의 미래"></a>
+            </li>            
+            <li data-title="메가 샤크" data-desc="바다의 포식자, 상어의 모든 것" data-video="https://www.youtube.com/embed/q0rqlhiuaM8">
+              <a href="#"><img src="images/cha11-min.png" alt="메가 샤크"></a>
+            </li>            
+            <li data-title="2017 TOP 10 TRAVEL" data-desc="내셔널 지오그래픽" data-video="https://www.youtube.com/embed/kaRMtmIMgoo">
+              <a href="#"><img src="images/cha12-min.png" alt="2017 TOP 10 TRAVEL"></a>
+            </li>              
+            
+            <li data-title="지니어스Ⅱ: 파블로 피카소" data-desc="천재 화가 피카소의 러브 앤 라이프" data-video="https://www.youtube.com/embed/Fr5ktc_cPbA">
+              <a href="#"><img src="images/sub/cha1.png" alt="파블로 피카소"></a>
+            </li>            
+            <li data-title="원 스트레인지 락" data-desc="우주인, 지구를 말하다" data-video="https://www.youtube.com/embed/C5S7Ja7jYCQ">
+              <a href="#"><img src="images/sub/cha2.png" alt="원 스트레인지 락"></a>
+            </li>            
+            <li data-title="체인 오브 커맨드" data-desc="미군의 심장 펜타곤부터 치열한 최전선까지 이어지는 명령" data-video="https://www.youtube.com/embed/EhwsCUjFBBI">
+              <a href="#"><img src="images/sub/cha3.png" alt="체인 오브 커맨드"></a>
+            </li>            
+            <li data-title="모건 프리먼의 스토리 오브 맨" data-desc="인간의 본성을 마주하다" data-video="https://www.youtube.com/embed/Y2aht9lHRt0">
+              <a href="#"><img src="images/sub/cha4.png" alt="모건 프리먼의 스토리 오브 맨"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="channel_bot">
+        <h2>SHOWS</h2>
+        <ul class="type_btn clear">
+          <li data-list="*" class="on"><a href="#">ALL CATEGORY</a></li>
+          <li data-list=".adven"><a href="#">ADVENTURE</a></li>
+          <li data-list=".drama"><a href="#">DRAMA</a></li>
+          <li data-list=".histo"><a href="#">HISTORY</a></li>
+          <li data-list=".scien"><a href="#">SCIENCE</a></li>
+          <li data-list=".milit"><a href="#">MILITARY</a></li>
+          <li data-list=".wild"><a href="#">WILD</a></li>
+        </ul>
+        <div class="channel_show">
+          <ul class="show_list clear">
+            <li class="all drama adven">
+              <a href="#"><img src="images/sub/cha1.png" alt="파블로 피카소"></a>
+            </li>            
+            <li class="all scien">
+              <a href="#"><img src="images/sub/cha2.png" alt="원 스트레인지 락"></a>
+            </li>            
+            <li class="all ">
+              <a href="#"><img src="images/sub/cha3.png" alt="체인 오브 커맨드"></a>
+            </li>            
+            <li class="all histo">
+              <a href="#"><img src="images/sub/cha4.png" alt="모건 프리먼의 스토리 오브 맨"></a>
+            </li>              
+              
+            <li class="all histo">
+              <a href="#"><img src="images/sub/cha5.png" alt="다이앤 포시"></a>
+            </li>            
+            <li class="all wild adven">
+              <a href="#"><img src="images/sub/cha6.png" alt="포토 아크"></a>
+            </li>            
+            <li class="all drama milit">
+              <a href="#"><img src="images/sub/cha7.png" alt="롱 로드 홈"></a>
+            </li>            
+            <li class="all wild adven">
+              <a href="#"><img src="images/sub/cha8.png" alt="에어 크래쉬 16"></a>
+            </li>            
+            
+            <li class="all wild">
+              <a href="#"><img src="images/sub/cha9.png" alt="서저리 쉽: 바다 위의 병원선"></a>
+            </li>         
+            <li class="all scien">
+              <a href="#"><img src="images/sub/cha10.png" alt="이어 밀리언: 인류의 미래"></a>
+            </li>  
+            <li class="all histo">
+              <a href="#"><img src="images/sub/cha11.png" alt="다이앤 포시"></a>
+            </li>            
+            <li class="all wild adven">
+              <a href="#"><img src="images/sub/cha12.png" alt="포토 아크"></a>
+            </li>   
+                     
+            <li class="all drama milit">
+              <a href="#"><img src="images/sub/cha13.png" alt="롱 로드 홈"></a>
+            </li>            
+            <li class="all wild adven">
+              <a href="#"><img src="images/sub/cha14.png" alt="에어 크래쉬 16"></a>
+            </li> 
+            <li class="all histo adven">
+              <a href="#"><img src="images/sub/cha15.png" alt="에어 크래쉬 16"></a>
+            </li> 
+            <li class="all drama scien">
+              <a href="#"><img src="images/sub/cha16.png" alt="에어 크래쉬 16"></a>
+            </li>        
+            
+            <li class="all drama milit">
+              <a href="#"><img src="images/sub/cha17.png" alt="롱 로드 홈"></a>
+            </li>            
+            <li class="all wild adven">
+              <a href="#"><img src="images/sub/cha18.png" alt="에어 크래쉬 16"></a>
+            </li> 
+            <li class="all histo adven">
+              <a href="#"><img src="images/sub/cha19.png" alt="에어 크래쉬 16"></a>
+            </li> 
+            <li class="all drama scien">
+              <a href="#"><img src="images/sub/cha20.png" alt="에어 크래쉬 16"></a>
+            </li>  
+            
+            <li class="all drama milit">
+              <a href="#"><img src="images/sub/cha21.png" alt="롱 로드 홈"></a>
+            </li>            
+            <li class="all milit adven">
+              <a href="#"><img src="images/sub/cha22.png" alt="에어 크래쉬 16"></a>
+            </li> 
+            <li class="all wild adven">
+              <a href="#"><img src="images/sub/cha23.png" alt="에어 크래쉬 16"></a>
+            </li> 
+            <li class="all histo adven">
+              <a href="#"><img src="images/sub/cha24.png" alt="에어 크래쉬 16"></a>
+            </li> 
+            
+            <li class="all drama milit">
+              <a href="#"><img src="images/sub/cha25.png" alt="롱 로드 홈"></a>
+            </li>            
+            <li class="all wild adven">
+              <a href="#"><img src="images/sub/cha26.png" alt="에어 크래쉬 16"></a>
+            </li> 
+            <li class="all milit scien">
+              <a href="#"><img src="images/sub/cha27.png" alt="에어 크래쉬 16"></a>
+            </li> 
+            <li class="all wild adven">
+              <a href="#"><img src="images/sub/cha28.png" alt="에어 크래쉬 16"></a>
+            </li>                                                             
+          </ul>
+        </div>
+      </div>    
+    </div>
+  </div>
+  <!-- 푸터 영역 -->
+  <div id="footer">
+    <div class="f_center">
+      <ul class="f_menu clear">
+        <li><a href="#">BRAND</a></li>
+        <li><a href="#">NEWS</a></li>
+        <li><a href="#">CHANNEL</a></li>
+        <li><a href="#">MAGAZINES</a></li>
+        <li><a href="#">STORE</a></li>
+      </ul>
+      <div class="f_bot clear">
+        <ul class="bot_left clear">
+          <li><a href="#"><img src="images/f_face-min.png" alt=""></a></li>
+          <li><a href="#"><img src="images/f_insta-min.png" alt=""></a></li>
+          <li><a href="#"><img src="images/f_twitter-min.png" alt=""></a></li>
+        </ul>
+        <div class="bot_right">
+          <h3>CONTACT US</h3>
+          <ul class="f_contact clear">
+            <li>Tel : 02-2137-3264</li>
+            <li>Fax : 02-2355-2515</li> 
+            <li>Email : ngkorea@gmail.com</li> 
+          </ul>
+          <p>Copyright © 2018 National Geographic Korea LLC. All rights reserved</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
